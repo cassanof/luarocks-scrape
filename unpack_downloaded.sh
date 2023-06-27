@@ -1,9 +1,10 @@
 #!/bin/bash
 
 
-# for every file in ./downloaded unpack with luarocks
-pushd ./downloaded
-for f in *; do
-    luarocks unpack $f
+pushd ./unpacked
+# in ../downloaded
+for f in ../downloaded/*.rock; do
+  echo "Unpacking $f"
+    luarocks unpack ../downloaded/$f
 done
 popd
